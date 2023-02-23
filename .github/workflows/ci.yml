@@ -1,0 +1,33 @@
+#  참고 : https://www.binaryflavor.com/aws-s3-cloudfront-route53gwa-github-actionseuro-jeongjeog-webpeiji-baepo-hoseuting-jadonghwahagi/
+
+name: CI
+
+on: 
+  workflow_dispatch : 
+  pull_request :
+    branches : [develop]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@master
+
+      - name: Cache node modules  
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-master-build-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
+
+      - name: Install Dependencies
+        run: yarn 
+
+      - name : Lint
+        run: yarn lint
+
+      - name: Test
+        run: yarn test
