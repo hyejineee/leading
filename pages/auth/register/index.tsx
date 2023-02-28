@@ -11,7 +11,7 @@ export default function RegisterUserPage() {
 
   return (
     <RegisterUserProvider registerUserUseCase={registerUserUseCase}>
-      <RegisterUserContainer>회원가입 페이지</RegisterUserContainer>
+      <RegisterUserContainer />
     </RegisterUserProvider>
   );
 }

@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
+
 import 'reflect-metadata';
 import { Global, ThemeProvider } from '@emotion/react';
 import type { AppProps } from 'next/app';
