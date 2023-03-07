@@ -1,21 +1,23 @@
-import { useForm } from 'react-hook-form';
+import { FieldValues, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useEffect } from 'react';
 import Input from '../../common/components/Inputs/Input';
-import { LOGIN_SCHEME } from '../../constants/yupScheme';
-import wrapPromise from '../../common/utils/wrapPromise';
-import { useLogin } from '../contexts/authContext';
+import { LOGIN_SCHEME } from '../../common/constants/yupScheme';
+import { useLogin } from '../contexts/loginContext';
 
 export default function LoginForm() {
+  const login = useLogin();
+
   const { control, handleSubmit } = useForm({
     resolver: yupResolver(LOGIN_SCHEME),
     mode: 'onChange',
   });
 
-  const test = wrapPromise(useLogin()('', '')).read();
+  const handleLogin = handleSubmit(async (inputs: FieldValues) => {
+    await login(inputs.email, inputs.password);
+  });
 
   return (
-    <form>
+    <form onSubmit={handleLogin}>
       <Input
         name='email'
         control={control}
