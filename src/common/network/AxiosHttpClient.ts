@@ -29,7 +29,11 @@ export default class AxiosHttpClient implements IHttpClient {
           } as SuccessResponse<T>),
       )
       .catch((rej: AxiosError) => {
-        throw { status: 'error', error: Error(rej.message) } as FailResponse;
+        throw {
+          status: 'error',
+          message: rej.message,
+          name: rej.name,
+        } as FailResponse;
       });
   }
 
@@ -45,7 +49,11 @@ export default class AxiosHttpClient implements IHttpClient {
           ({ status: 'success', data: res.data } as SuccessResponse<T>),
       )
       .catch((rej: AxiosError) => {
-        throw { status: 'error', error: Error(rej.message) } as FailResponse;
+        throw {
+          status: 'error',
+          message: rej.message,
+          name: rej.name,
+        } as FailResponse;
       });
   }
 
@@ -61,7 +69,11 @@ export default class AxiosHttpClient implements IHttpClient {
           ({ status: 'success', data: res.data } as SuccessResponse<T>),
       )
       .catch((rej: AxiosError) => {
-        throw { status: 'error', error: Error(rej.message) } as FailResponse;
+        throw {
+          status: 'error',
+          message: rej.message,
+          name: rej.name,
+        } as FailResponse;
       });
   }
 
@@ -72,7 +84,11 @@ export default class AxiosHttpClient implements IHttpClient {
         () => ({ status: 'success', data: true } as SuccessResponse<boolean>),
       )
       .catch((rej: AxiosError) => {
-        throw { status: 'error', error: Error(rej.message) } as FailResponse;
+        throw {
+          status: 'error',
+          message: rej.message,
+          name: rej.name,
+        } as FailResponse;
       });
   }
 }
