@@ -1,12 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios, { AxiosError, AxiosInstance, AxiosResponse } from 'axios';
+import { injectable } from 'inversify';
 import {
   ApiResponse,
   FailResponse,
   SuccessResponse,
 } from './types/apiResponse';
-import { IHttpClient } from './types/httpClient';
+import { IHttpClient } from './types/HttpClient.interface';
 
+@injectable()
 export default class AxiosHttpClient implements IHttpClient {
   private client: AxiosInstance;
 
