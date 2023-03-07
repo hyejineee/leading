@@ -1,12 +1,11 @@
-import 'reflect-metadata';
 import { IAuthRepository } from '@auth/types';
 import { UserEntity } from '@common/entities/user';
 import {
-  ApiResponse,
   FailResponse,
   SuccessResponse,
 } from '@common/network/types/apiResponse';
 import { IHttpClient } from '@common/network/types/HttpClient.interface';
+import 'reflect-metadata';
 import { anything, instance, mock, reset, when } from 'ts-mockito';
 import AuthRepository from './AuthRepository';
 

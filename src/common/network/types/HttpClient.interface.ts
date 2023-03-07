@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ApiResponse, SuccessResponse } from './apiResponse';
+import { SuccessResponse } from './apiResponse';
 
 export interface IHttpClient {
   get<T>(endPoint: string, options?: any): Promise<SuccessResponse<T>>;
