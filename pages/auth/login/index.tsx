@@ -7,7 +7,7 @@ import {
   LoginProvider,
   useLoginPageState,
 } from '@auth/contexts/loginContext/loginContext';
-import LoginUseCase from '@auth/usecases/LoginUseCase';
+import LoginUseCase from '@auth/usecases/LoginUseCase/LoginUseCase';
 import appContainer from '@common/di/container';
 import APP_TYPES from '@common/di/types';
 import { useEffect } from 'react';

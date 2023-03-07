@@ -3,16 +3,17 @@ import END_POINT from '@common/constants/endPoint';
 import APP_TYPES from '@common/di/types';
 import { UserEntity } from '@common/entities/user';
 import { SuccessResponse } from '@common/network/types/apiResponse';
-import * as HttpClientInterface from '@common/network/types/HttpClient.interface';
+import type { IHttpClient } from '@common/network/types/HttpClient.interface';
+
 import { inject, injectable } from 'inversify';
 
 @injectable()
 export default class AuthRepository implements IAuthRepository {
-  private httpClient: HttpClientInterface.IHttpClient;
+  private httpClient: IHttpClient;
 
   constructor(
     @inject(APP_TYPES.HTTP_CLIENT_TYPES.IHttpClient)
-    httpClient: HttpClientInterface.IHttpClient,
+    httpClient: IHttpClient | any,
   ) {
     this.httpClient = httpClient;
   }
