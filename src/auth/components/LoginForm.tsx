@@ -1,8 +1,8 @@
 import { FieldValues, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import Input from '../../common/components/Inputs/Input';
-import { LOGIN_SCHEME } from '../../common/constants/yupScheme';
-import { useLogin } from '../contexts/loginContext';
+import Input from '@common/components/Inputs/Input';
+import { LOGIN_SCHEME } from '@common/constants/yupScheme';
+import { useLogin } from '@auth/contexts/loginContext/loginContext';
 
 export default function LoginForm() {
   const login = useLogin();

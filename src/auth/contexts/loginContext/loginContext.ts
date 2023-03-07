@@ -1,8 +1,8 @@
 import constate from 'constate';
 import { useRouter } from 'next/router';
-import { useSetAlert } from '../../common/components/AlertMessage';
-import { UseLogin } from '../types/hooks.types';
-import LoginUseCase from '../usecases/LoginUseCase';
+import { useSetAlert } from '@common/components/AlertMessage';
+import { UseLogin } from '@auth/types/hooks.types';
+import LoginUseCase from '@auth/usecases/LoginUseCase';
 
 type UseAuthContextProps = {
   loginUseCase: LoginUseCase;

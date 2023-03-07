@@ -1,8 +1,28 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require('path');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   swcMinify: true,
   concurrentFeatures: true,
+
+  webpack: config => {
+    const copy = [...config];
+    copy.resolve = {
+      alias: {
+        ...copy.resolve,
+        '@auth': path.resolve(__dirname, 'src/auth'),
+        '@article': path.resolve(__dirname, 'src/article'),
+        '@comment': path.resolve(__dirname, 'src/comment'),
+        '@profile': path.resolve(__dirname, 'src/profile'),
+        '@tag': path.resolve(__dirname, 'src/tag'),
+        '@common': path.resolve(__dirname, 'src/common'),
+      },
+    };
+
+    return copy;
+  },
 };
 
 module.exports = nextConfig;

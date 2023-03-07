@@ -22,7 +22,16 @@
       "jest-plugin-context"
     ],
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "baseUrl": "./",
+    "paths": {
+      "@auth/*": ["src/auth/*"],
+      "@article/*": ["src/article/*"],
+      "@comment/*": ["src/comment/*"],
+      "@profile/*": ["src/profile/*"],
+      "@tag/*": ["src/tag/*"],
+      "@common/*": ["src/common/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "*.js"],
   "exclude": ["node_modules"]

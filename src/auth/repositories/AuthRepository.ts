@@ -1,10 +1,10 @@
 import { inject, injectable } from 'inversify';
-import { UserEntity } from '../../common/entities/user';
-import { ApiResponse } from '../../common/network/types/apiResponse';
-import * as HttpClientInterface from '../../common/network/types/HttpClient.interface';
-import END_POINT from '../../common/constants/endPoint';
-import { IAuthRepository } from '../types';
-import APP_TYPES from '../../common/di/types';
+import { UserEntity } from '@common/entities/user';
+import { ApiResponse } from '@common/network/types/apiResponse';
+import * as HttpClientInterface from '@common/network/types/HttpClient.interface';
+import END_POINT from '@common/constants/endPoint';
+import { IAuthRepository } from '@auth/types';
+import APP_TYPES from '@common/di/types';
 
 @injectable()
 export default class AuthRepository implements IAuthRepository {

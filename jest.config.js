@@ -8,9 +8,17 @@ const createJestConfig = nextJest({
 /** @type {import('jest').Config} */
 const customJestConfig = {
   preset: 'ts-jest',
-  moduleDirectories: ['node_modules', '<rootDir>/'],
+  moduleDirectories: ['node_modules', '<rootDir>/src'],
   testEnvironment: 'jest-environment-jsdom',
   testPathIgnorePatterns: ['node_modules'],
+  moduleNameMapper: {
+    '^@auth/(.*)$': '<rootDir>/src/auth/$1',
+    '^@article/(.*)$': '<rootDir>/src/article/$1',
+    '^@comment/(.*)$': '<rootDir>/src/comment/$1',
+    '^@profile/(.*)$': '<rootDir>/src/profile/$1',
+    '^@tag/(.*)$': '<rootDir>/src/tag/$1',
+    '^@common/(.*)$': '<rootDir>/src/common/$1',
+  },
   coverageThreshold: {
     global: {
       statements: 80,

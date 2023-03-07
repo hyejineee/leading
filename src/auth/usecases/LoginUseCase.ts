@@ -1,6 +1,6 @@
 import { inject, injectable } from 'inversify';
-import APP_TYPES from '../../common/di/types';
-import * as types from '../types';
+import APP_TYPES from '@common/di/types';
+import * as types from '@auth/types';
 
 @injectable()
 export default class LoginUseCase {

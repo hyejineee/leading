@@ -1,5 +1,5 @@
 import LoginForm from '../../../src/auth/components/LoginForm';
-import { LoginProvider } from '../../../src/auth/contexts/loginContext';
+import { LoginProvider } from '../../../src/auth/contexts/loginContext/loginContext';
 import LoginUseCase from '../../../src/auth/usecases/LoginUseCase';
 import appContainer from '../../../src/common/di/container';
 import APP_TYPES from '../../../src/common/di/types';
