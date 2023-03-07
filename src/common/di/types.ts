@@ -4,6 +4,7 @@ const HTTP_CLIENT_TYPES = {
 
 const REPOSITORY_TYPES = {
   IAuthRepository: Symbol.for('IAuthRepository'),
+  ILocalRepository: Symbol.for('ILocalRepository'),
 };
 
 const USE_CASE_TYPES = {
