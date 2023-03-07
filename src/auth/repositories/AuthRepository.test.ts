@@ -57,7 +57,7 @@ describe('AuthRepository', () => {
         try {
           await authRepository.login('email', 'password');
         } catch (e) {
-          const actual = e as ApiResponse<UserEntity>;
+          const actual = e as FailResponse;
           expect(actual.status).toBe('error');
           if (actual.status === 'error') {
             expect(actual.message).toBe(errorMessage);

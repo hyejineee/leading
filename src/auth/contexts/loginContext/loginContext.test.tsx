@@ -1,5 +1,5 @@
-import LoginUseCase from '@auth/usecases/LoginUseCase';
-import { act, render, renderHook } from '@testing-library/react';
+import LoginUseCase from '@auth/usecases/LoginUseCase/LoginUseCase';
+import { act, renderHook } from '@testing-library/react';
 import { ReactNode } from 'react';
 import { anything, instance, mock, when } from 'ts-mockito';
 import {
@@ -10,6 +10,7 @@ import {
 } from './loginContext';
 
 // 로그인 페이지에서 사용되는 상태를 관리하는 context
+
 describe('LoginContext', () => {
   const mockLoginUseCase = mock<LoginUseCase>();
 
@@ -57,6 +58,4 @@ describe('LoginContext', () => {
     expect(result.current.loginPageState?.name).toBe(LoginPageState.SHOW_ERROR);
     expect(result.current.loginPageState?.message).toBe(errorMessage);
   });
-
-  // 로그인에 실패하면 에러 메시지 띄우기 액션을 발행한다.
 });

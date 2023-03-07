@@ -1,6 +1,6 @@
 import constate from 'constate';
 import { UseLogin } from '@auth/types/hooks.types';
-import LoginUseCase from '@auth/usecases/LoginUseCase';
+import LoginUseCase from '@auth/usecases/LoginUseCase/LoginUseCase';
 import { useState } from 'react';
 import Action from '@common/types/Action';
 
