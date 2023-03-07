@@ -1,0 +1,19 @@
+const HTTP_CLIENT_TYPES = {
+  IHttpClient: Symbol.for('IHttpClient'),
+};
+
+const REPOSITORY_TYPES = {
+  IAuthRepository: Symbol.for('IAuthRepository'),
+};
+
+const USE_CASE_TYPES = {
+  LoginUseCase: Symbol.for('LoginUseCase'),
+};
+
+const APP_TYPES = {
+  HTTP_CLIENT_TYPES,
+  REPOSITORY_TYPES,
+  USE_CASE_TYPES,
+};
+
+export default APP_TYPES;
