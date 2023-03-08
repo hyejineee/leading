@@ -4,6 +4,11 @@ import { SuccessResponse } from '@common/network/types/apiResponse';
 
 export interface IAuthRepository {
   login(email: string, password: string): Promise<SuccessResponse<UserEntity>>;
+  registerUser(
+    email: string,
+    password: string,
+    username: string,
+  ): Promise<SuccessResponse<UserEntity>>;
 }
 
 export interface IAuthContext {
