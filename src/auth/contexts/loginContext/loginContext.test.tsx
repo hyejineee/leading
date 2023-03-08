@@ -38,7 +38,7 @@ describe('LoginContext', () => {
     });
 
     expect(result.current.loginPageState?.name).toBe(
-      LoginPageState.GO_TO_MAIN_PAGE,
+      LoginPageState.SUCCESS_LOGIN,
     );
   });
 
@@ -55,7 +55,7 @@ describe('LoginContext', () => {
       await result.current.login('email', 'password');
     });
 
-    expect(result.current.loginPageState?.name).toBe(LoginPageState.SHOW_ERROR);
+    expect(result.current.loginPageState?.name).toBe(LoginPageState.FAIL_LOGIN);
     expect(result.current.loginPageState?.message).toBe(errorMessage);
   });
 });
