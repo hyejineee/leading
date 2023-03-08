@@ -7,6 +7,11 @@ const createJestConfig = nextJest({
 
 /** @type {import('jest').Config} */
 const customJestConfig = {
+  globals: {
+    'ts-jest': {
+      tsConfig: 'tsconfig.json',
+    },
+  },
   preset: 'ts-jest',
   moduleDirectories: ['node_modules', '<rootDir>/src'],
   testEnvironment: 'jest-environment-jsdom',

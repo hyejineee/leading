@@ -1,8 +1,9 @@
-import LoginForm from '../../../src/auth/components/LoginForm';
-import { LoginProvider } from '../../../src/auth/contexts/loginContext/loginContext';
-import LoginUseCase from '../../../src/auth/usecases/LoginUseCase';
-import appContainer from '../../../src/common/di/container';
-import APP_TYPES from '../../../src/common/di/types';
+import LoginContainer from '@auth/components/container/LoginContainer/LoginContainer';
+import LoginForm from '@auth/components/LoginForm';
+import { LoginProvider } from '@auth/contexts/loginContext/loginContext';
+import LoginUseCase from '@auth/usecases/LoginUseCase/LoginUseCase';
+import appContainer from '@common/di/container';
+import APP_TYPES from '@common/di/types';
 
 export default function LoginPage() {
   const loginUseCase = appContainer.get<LoginUseCase>(
@@ -11,8 +12,10 @@ export default function LoginPage() {
 
   return (
     <LoginProvider loginUseCase={loginUseCase}>
-      로그인 페이지
-      <LoginForm />
+      <LoginContainer>
+        로그인 페이지
+        <LoginForm />
+      </LoginContainer>
     </LoginProvider>
   );
 }

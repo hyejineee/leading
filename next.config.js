@@ -8,10 +8,9 @@ const nextConfig = {
   concurrentFeatures: true,
 
   webpack: config => {
-    const copy = [...config];
+    const copy = { ...config };
     copy.resolve = {
       alias: {
-        ...copy.resolve,
         '@auth': path.resolve(__dirname, 'src/auth'),
         '@article': path.resolve(__dirname, 'src/article'),
         '@comment': path.resolve(__dirname, 'src/comment'),
@@ -19,6 +18,7 @@ const nextConfig = {
         '@tag': path.resolve(__dirname, 'src/tag'),
         '@common': path.resolve(__dirname, 'src/common'),
       },
+      ...copy.resolve,
     };
 
     return copy;

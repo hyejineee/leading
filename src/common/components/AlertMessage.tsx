@@ -1,5 +1,6 @@
+import { message } from 'antd';
 import constate from 'constate';
-import { ReactNode, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 type Alert = {
   status: 'error' | 'success' | 'warn';
@@ -32,6 +33,37 @@ export const [AlertProvider, useAlert, useSetAlert] = constate(
 
 export default function AlertMessage({ children }: Props) {
   const alert = useAlert();
+  const setAlert = useSetAlert();
+  const [messageApi, contextHolder] = message.useMessage();
 
-  return <div>{children}</div>;
+  const initAlert = () => {
+    setAlert(p => ({ ...p, visible: false }));
+  };
+
+  useEffect(() => {
+    if (!alert.visible) return;
+
+    switch (alert.status) {
+      case 'error':
+        messageApi.error(alert.message);
+        break;
+      case 'success':
+        messageApi.success(alert.message);
+        break;
+      case 'warn':
+        messageApi.warning(alert.message);
+        break;
+      default:
+        messageApi.info(alert.message);
+    }
+
+    initAlert();
+  }, [alert]);
+
+  return (
+    <>
+      {contextHolder}
+      {children}
+    </>
+  );
 }

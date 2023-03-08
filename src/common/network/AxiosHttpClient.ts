@@ -1,11 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios, { AxiosError, AxiosInstance, AxiosResponse } from 'axios';
 import { injectable } from 'inversify';
-import {
-  ApiResponse,
-  FailResponse,
-  SuccessResponse,
-} from './types/apiResponse';
+import { FailResponse, SuccessResponse } from './types/apiResponse';
 import { IHttpClient } from './types/HttpClient.interface';
 
 @injectable()
@@ -18,7 +14,7 @@ export default class AxiosHttpClient implements IHttpClient {
     });
   }
 
-  get<T>(endPoint: string, options?: any): Promise<ApiResponse<T>> {
+  get<T>(endPoint: string, options?: any): Promise<SuccessResponse<T>> {
     return this.client
       .get(endPoint, options)
       .then(
@@ -29,7 +25,11 @@ export default class AxiosHttpClient implements IHttpClient {
           } as SuccessResponse<T>),
       )
       .catch((rej: AxiosError) => {
-        throw { status: 'error', error: Error(rej.message) } as FailResponse;
+        throw {
+          status: 'error',
+          message: rej.message,
+          name: rej.name,
+        } as FailResponse;
       });
   }
 
@@ -37,7 +37,7 @@ export default class AxiosHttpClient implements IHttpClient {
     endPoint: string,
     payload: any,
     options?: any,
-  ): Promise<ApiResponse<T>> {
+  ): Promise<SuccessResponse<T>> {
     return this.client
       .post(endPoint, payload, options)
       .then(
@@ -45,7 +45,11 @@ export default class AxiosHttpClient implements IHttpClient {
           ({ status: 'success', data: res.data } as SuccessResponse<T>),
       )
       .catch((rej: AxiosError) => {
-        throw { status: 'error', error: Error(rej.message) } as FailResponse;
+        throw {
+          status: 'error',
+          message: rej.message,
+          name: rej.name,
+        } as FailResponse;
       });
   }
 
@@ -53,7 +57,7 @@ export default class AxiosHttpClient implements IHttpClient {
     endPoint: string,
     payload: any,
     options?: any,
-  ): Promise<ApiResponse<T>> {
+  ): Promise<SuccessResponse<T>> {
     return this.client
       .put(endPoint, payload, options)
       .then(
@@ -61,18 +65,26 @@ export default class AxiosHttpClient implements IHttpClient {
           ({ status: 'success', data: res.data } as SuccessResponse<T>),
       )
       .catch((rej: AxiosError) => {
-        throw { status: 'error', error: Error(rej.message) } as FailResponse;
+        throw {
+          status: 'error',
+          message: rej.message,
+          name: rej.name,
+        } as FailResponse;
       });
   }
 
-  delete(endPoint: string, options?: any): Promise<ApiResponse<boolean>> {
+  delete(endPoint: string, options?: any): Promise<SuccessResponse<boolean>> {
     return this.client
       .delete(endPoint, options)
       .then(
         () => ({ status: 'success', data: true } as SuccessResponse<boolean>),
       )
       .catch((rej: AxiosError) => {
-        throw { status: 'error', error: Error(rej.message) } as FailResponse;
+        throw {
+          status: 'error',
+          message: rej.message,
+          name: rej.name,
+        } as FailResponse;
       });
   }
 }
