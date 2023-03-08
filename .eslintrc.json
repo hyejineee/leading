@@ -42,6 +42,7 @@
     "@typescript-eslint/no-throw-literal": 0,
     "indent": 0,
     "@typescript-eslint/indent": 0,
-    "@typescript-eslint/lines-between-class-members": 0
+    "@typescript-eslint/lines-between-class-members": 0,
+    "react-hooks/exhaustive-deps": 0
   }
 }
