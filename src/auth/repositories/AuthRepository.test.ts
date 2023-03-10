@@ -65,4 +65,51 @@ describe('AuthRepository', () => {
       });
     });
   });
+
+  describe('registerUser 메서드', () => {
+    context('registerUser api의 응답이 성공일 때', () => {
+      it('UserEntity 응답을 받는다.', async () => {
+        when(mockHttpClient.post(anything(), anything())).thenResolve({
+          status: 'success',
+          data: fakeUserEntity,
+        } as SuccessResponse<UserEntity>);
+
+        const actual = await authRepository.registerUser(
+          'email',
+          'password',
+          'username',
+        );
+
+        expect(actual.status).toBe('success');
+        if (actual.status === 'success') {
+          expect(actual.data.email).toBe(fakeUserEntity.email);
+        }
+      });
+    });
+
+    context('registerUser api의 응답이 실패일 때', () => {
+      it('FailResponse 응답을 받는다.', async () => {
+        const errorMessage = '로그인에 실패했습니다.';
+
+        when(mockHttpClient.post(anything(), anything())).thenThrow({
+          status: 'error',
+          name: 'error_name',
+          message: errorMessage,
+        } as FailResponse);
+
+        try {
+          await authRepository.registerUser('email', 'password', 'username');
+        } catch (e) {
+          const actual = e as FailResponse;
+          expect(actual.status).toBe('error');
+          if (actual.status === 'error') {
+            expect(actual.message).toBe(errorMessage);
+          }
+        }
+      });
+    });
+  });
+
+
+
 });

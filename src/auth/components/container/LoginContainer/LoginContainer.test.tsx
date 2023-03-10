@@ -62,8 +62,7 @@ describe('LoginContainer', () => {
     context('GO_TO_MAIN_PAGE', () => {
       it('메인 페이지로 이동한다.', () => {
         mockUseLoginPageState.mockImplementationOnce(
-          () =>
-            new Action<LoginPageState, null>(LoginPageState.GO_TO_MAIN_PAGE),
+          () => new Action<LoginPageState, null>(LoginPageState.SUCCESS_LOGIN),
         );
 
         customRender();
@@ -78,7 +77,7 @@ describe('LoginContainer', () => {
           const errorMessage = 'error message!';
           mockUseLoginPageState.mockImplementationOnce(
             () =>
-              new Action<LoginPageState, null>(LoginPageState.SHOW_ERROR, {
+              new Action<LoginPageState, null>(LoginPageState.FAIL_LOGIN, {
                 message: errorMessage,
               }),
           );
@@ -94,7 +93,7 @@ describe('LoginContainer', () => {
           const errorMessage = 'error message!';
           mockUseLoginPageState.mockImplementationOnce(
             () =>
-              new Action<LoginPageState, null>(LoginPageState.SHOW_ERROR, {
+              new Action<LoginPageState, null>(LoginPageState.FAIL_LOGIN, {
                 message: undefined,
               }),
           );
