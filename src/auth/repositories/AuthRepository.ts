@@ -17,6 +17,15 @@ export default class AuthRepository implements IAuthRepository {
   ) {
     this.httpClient = httpClient;
   }
+  registerUser(
+    email: string,
+    password: string,
+    username: string,
+  ): Promise<SuccessResponse<UserEntity>> {
+    return this.httpClient.post(END_POINT.REGISTER_USER, {
+      user: { email, password, username },
+    });
+  }
 
   login(email: string, password: string): Promise<SuccessResponse<UserEntity>> {
     return this.httpClient.post(END_POINT.LOGIN, { user: { email, password } });

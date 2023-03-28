@@ -5,8 +5,8 @@ import { useState } from 'react';
 import Action from '@common/types/Action';
 
 export enum LoginPageState {
-  GO_TO_MAIN_PAGE = 'GO_TO_MAIN_PAGE',
-  SHOW_ERROR = 'SHOW_ERROR',
+  SUCCESS_LOGIN = 'SUCCESS_LOGIN',
+  FAIL_LOGIN = 'FAIL_LOGIN',
 }
 
 type UseAuthContextProps = {
@@ -21,11 +21,11 @@ const useLoginContext = ({ loginUseCase }: UseAuthContextProps) => {
       await loginUseCase.execute(email, password);
 
       setUiState(
-        new Action<LoginPageState, null>(LoginPageState.GO_TO_MAIN_PAGE),
+        new Action<LoginPageState, null>(LoginPageState.SUCCESS_LOGIN),
       );
     } catch (e) {
       setUiState(
-        new Action<LoginPageState, null>(LoginPageState.SHOW_ERROR, {
+        new Action<LoginPageState, null>(LoginPageState.FAIL_LOGIN, {
           message: (e as Error).message,
         }),
       );

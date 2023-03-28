@@ -1,4 +1,7 @@
-import { useLoginPageState } from '@auth/contexts/loginContext/loginContext';
+import {
+  LoginPageState,
+  useLoginPageState,
+} from '@auth/contexts/loginContext/loginContext';
 import { useSetAlert } from '@common/components/AlertMessage';
 import { useRouter } from 'next/router';
 import { ReactNode, useEffect } from 'react';
@@ -15,12 +18,12 @@ export default function LoginContainer({ children }: Props) {
   useEffect(() => {
     if (!uiState) return;
 
-    if (uiState?.name === 'GO_TO_MAIN_PAGE') {
+    if (uiState?.name === LoginPageState.SUCCESS_LOGIN) {
       router.replace('/');
       return;
     }
 
-    if (uiState?.name === 'SHOW_ERROR') {
+    if (uiState?.name === LoginPageState.FAIL_LOGIN) {
       if (!uiState.message) return;
 
       showAlert({
