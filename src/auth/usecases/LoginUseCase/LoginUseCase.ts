@@ -20,8 +20,6 @@ export default class LoginUseCase {
 
   async execute(email: string, password: string) {
     const response = await this.authRepository.login(email, password);
-
-    const { token } = response.data;
-    this.localRepository.set<string>('token', token);
+    this.localRepository.set<string>('token', response.data.token);
   }
 }

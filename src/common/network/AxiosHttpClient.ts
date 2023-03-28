@@ -1,6 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import axios, { AxiosError, AxiosInstance, AxiosResponse } from 'axios';
-import { injectable } from 'inversify';
+import APP_TYPES from '@common/di/types';
+import { ILocalRepository } from '@common/types/interfaces';
+import axios, {
+  AxiosError,
+  AxiosInstance,
+  AxiosResponse,
+  InternalAxiosRequestConfig,
+} from 'axios';
+import { inject, injectable } from 'inversify';
 import { FailResponse, SuccessResponse } from './types/apiResponse';
 import { IHttpClient } from './types/HttpClient.interface';
 
@@ -8,10 +15,28 @@ import { IHttpClient } from './types/HttpClient.interface';
 export default class AxiosHttpClient implements IHttpClient {
   private client: AxiosInstance;
 
-  constructor(baseUrl: string) {
+  constructor(
+    baseUrl: string,
+    @inject(APP_TYPES.REPOSITORY_TYPES.ILocalRepository)
+    localRepository: ILocalRepository | any,
+  ) {
     this.client = axios.create({
       baseURL: baseUrl,
     });
+
+    this.client.interceptors.request.use(
+      (config: InternalAxiosRequestConfig<any>) => {
+        const token = localRepository.get('token');
+        if (!token) return config;
+
+        return {
+          ...config,
+          headers: {
+            Authorization: `Token ${localRepository.get('token')}`,
+          },
+        } as InternalAxiosRequestConfig<any>;
+      },
+    );
   }
 
   get<T>(endPoint: string, options?: any): Promise<SuccessResponse<T>> {

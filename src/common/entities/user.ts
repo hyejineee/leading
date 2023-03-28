@@ -5,3 +5,7 @@ export interface UserEntity {
   bio: string;
   image: string;
 }
+
+export type UserResponse = {
+  user: UserEntity;
+};
