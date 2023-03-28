@@ -9,6 +9,7 @@ const REPOSITORY_TYPES = {
 
 const USE_CASE_TYPES = {
   LoginUseCase: Symbol.for('LoginUseCase'),
+  RegisterUserUseCase: Symbol.for('RegisterUserUseCase'),
 };
 
 const APP_TYPES = {

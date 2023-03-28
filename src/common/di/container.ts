@@ -1,3 +1,4 @@
+import RegisterUserUseCase from '@auth/usecases/RegisterUserUseCase/RegisterUserUseCase';
 import { ILocalRepository } from '@common/types/interfaces';
 import LocalRepository from '@common/utils/LocalRepository';
 import { Container } from 'inversify';
@@ -26,5 +27,8 @@ appContainer
 
 // usecase
 appContainer.bind(APP_TYPES.USE_CASE_TYPES.LoginUseCase).to(LoginUseCase);
+appContainer
+  .bind(APP_TYPES.USE_CASE_TYPES.RegisterUserUseCase)
+  .to(RegisterUserUseCase);
 
 export default appContainer;
