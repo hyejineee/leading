@@ -2,7 +2,7 @@ import {
   LoginPageState,
   useLoginPageState,
 } from '@auth/contexts/loginContext/loginContext';
-import { useSetAlert } from '@common/components/AlertMessage';
+import { useSetAlert } from 'src/components/commons/AlertMessage';
 import { useRouter } from 'next/router';
 import { ReactNode, useEffect } from 'react';
 

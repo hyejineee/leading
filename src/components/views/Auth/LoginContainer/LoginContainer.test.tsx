@@ -5,7 +5,9 @@ import {
   useLoginPageState,
 } from '@auth/contexts/loginContext/loginContext';
 import LoginUseCase from '@auth/usecases/LoginUseCase/LoginUseCase';
-import AlertMessage, { AlertProvider } from '@common/components/AlertMessage';
+import AlertMessage, {
+  AlertProvider,
+} from 'src/components/commons/AlertMessage';
 import Action from '@common/types/Action';
 import { render, screen } from '@testing-library/react';
 import mockRouter from 'next-router-mock';

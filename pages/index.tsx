@@ -1,4 +1,4 @@
-import GlobalFeed from '@article/components/GlobalFeed';
+import GlobalFeed from 'src/components/views/Article/GlobalFeed';
 import { FeedProvider } from '@article/context/FeedContext';
 import FetchGlobalFeedUseCase from '@article/usecases/FetchGlobalFeedUseCase';
 import appContainer from '@common/di/container';

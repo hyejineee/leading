@@ -1,8 +1,9 @@
 import { useLogin } from '@auth/contexts/loginContext/loginContext';
-import Form from '@common/components/From';
-import Input from '@common/components/Inputs/Input';
+
+import Input from 'src/components/commons/Input';
 import { LOGIN_SCHEME } from '@common/constants/yupScheme';
 import { FieldValues, UseFormReturn } from 'react-hook-form';
+import Form from 'src/components/commons/From';
 
 export default function LoginForm() {
   const login = useLogin();

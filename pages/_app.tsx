@@ -8,7 +8,7 @@ import useTheme from '../src/common/styles/hooks/useTheme';
 import mode from '../src/common/styles/theme';
 import AlertMessage, {
   AlertProvider,
-} from '../src/common/components/AlertMessage';
+} from '../src/components/commons/AlertMessage';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [theme] = useTheme();

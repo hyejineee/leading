@@ -1,6 +1,6 @@
 import { useRegisterUser } from '@auth/contexts/registerUserContext/registerUserContext';
 import Form from '@common/components/From';
-import Input from '@common/components/Inputs/Input';
+import Input from 'src/components/commons/Input';
 import { REGISTER_USER_SCHEMA } from '@common/constants/yupScheme';
 import { FieldValues, UseFormReturn } from 'react-hook-form';
 

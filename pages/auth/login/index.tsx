@@ -1,5 +1,5 @@
-import LoginContainer from '@auth/components/container/LoginContainer/LoginContainer';
-import LoginForm from '@auth/components/LoginForm';
+import LoginContainer from 'src/components/views/Auth/LoginContainer/LoginContainer';
+import LoginForm from 'src/components/views/Auth/LoginForm';
 import { LoginProvider } from '@auth/contexts/loginContext/loginContext';
 import LoginUseCase from '@auth/usecases/LoginUseCase/LoginUseCase';
 import appContainer from '@common/di/container';
