@@ -5,11 +5,13 @@ const HTTP_CLIENT_TYPES = {
 const REPOSITORY_TYPES = {
   IAuthRepository: Symbol.for('IAuthRepository'),
   ILocalRepository: Symbol.for('ILocalRepository'),
+  IArticleRepository: Symbol.for('IArticleRepository'),
 };
 
 const USE_CASE_TYPES = {
   LoginUseCase: Symbol.for('LoginUseCase'),
   RegisterUserUseCase: Symbol.for('RegisterUserUseCase'),
+  FetchGlobalFeedUseCase: Symbol.for('FetchGlobalFeedUseCase'),
 };
 
 const APP_TYPES = {

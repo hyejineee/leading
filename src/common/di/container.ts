@@ -1,3 +1,6 @@
+import ArticleRepository from '@article/repository/ArticleRepository';
+import { IArticleRepository } from '@article/repository/ArticleRepository.interface';
+import FetchGlobalFeedUseCase from '@article/usecases/FetchGlobalFeedUseCase';
 import RegisterUserUseCase from '@auth/usecases/RegisterUserUseCase/RegisterUserUseCase';
 import { ILocalRepository } from '@common/types/interfaces';
 import LocalRepository from '@common/utils/LocalRepository';
@@ -14,7 +17,9 @@ const appContainer = new Container();
 // http client
 appContainer
   .bind<IHttpClient>(APP_TYPES.HTTP_CLIENT_TYPES.IHttpClient)
-  .toConstantValue(new AxiosHttpClient('https://api.realworld.io/api'));
+  .toConstantValue(
+    new AxiosHttpClient('https://api.realworld.io/api', new LocalRepository()),
+  );
 
 // repository
 appContainer
@@ -25,10 +30,18 @@ appContainer
   .bind<ILocalRepository>(APP_TYPES.REPOSITORY_TYPES.ILocalRepository)
   .toConstantValue(new LocalRepository());
 
+appContainer
+  .bind<IArticleRepository>(APP_TYPES.REPOSITORY_TYPES.IArticleRepository)
+  .to(ArticleRepository);
+
 // usecase
 appContainer.bind(APP_TYPES.USE_CASE_TYPES.LoginUseCase).to(LoginUseCase);
 appContainer
   .bind(APP_TYPES.USE_CASE_TYPES.RegisterUserUseCase)
   .to(RegisterUserUseCase);
+
+appContainer
+  .bind(APP_TYPES.USE_CASE_TYPES.FetchGlobalFeedUseCase)
+  .to(FetchGlobalFeedUseCase);
 
 export default appContainer;
