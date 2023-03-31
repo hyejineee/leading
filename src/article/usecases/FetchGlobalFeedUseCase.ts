@@ -1,4 +1,4 @@
-import { IArticleRepository } from '@article/repository/ArticleRepository.interface';
+import { IArticleRepository } from 'src/repositories/ArticleRepository/ArticleRepository.interface';
 import APP_TYPES from '@common/di/types';
 import { inject, injectable } from 'inversify';
 

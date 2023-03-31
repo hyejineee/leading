@@ -1,5 +1,5 @@
 import ArticleRepository from '@article/repository/ArticleRepository';
-import { IArticleRepository } from '@article/repository/ArticleRepository.interface';
+import { IArticleRepository } from 'src/repositories/ArticleRepository/ArticleRepository.interface';
 import FetchGlobalFeedUseCase from '@article/usecases/FetchGlobalFeedUseCase';
 import RegisterUserUseCase from '@auth/usecases/RegisterUserUseCase/RegisterUserUseCase';
 import { ILocalRepository } from '@common/types/interfaces';
