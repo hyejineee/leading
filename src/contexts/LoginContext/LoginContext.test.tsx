@@ -1,4 +1,4 @@
-import LoginUseCase from '@auth/usecases/LoginUseCase/LoginUseCase';
+import LoginUseCase from 'src/useCases/LoginUseCase/LoginUseCase';
 import { act, renderHook } from '@testing-library/react';
 import { ReactNode } from 'react';
 import { anything, instance, mock, when } from 'ts-mockito';

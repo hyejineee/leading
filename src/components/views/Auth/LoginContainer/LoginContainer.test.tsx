@@ -4,7 +4,7 @@ import {
   LoginProvider,
   useLoginPageState,
 } from 'src/contexts/LoginContext/LoginContext';
-import LoginUseCase from '@auth/usecases/LoginUseCase/LoginUseCase';
+import LoginUseCase from 'src/useCases/LoginUseCase/LoginUseCase';
 import AlertMessage, {
   AlertProvider,
 } from 'src/components/commons/AlertMessage';

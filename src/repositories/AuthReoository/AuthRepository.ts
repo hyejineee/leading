@@ -1,11 +1,10 @@
-import { IAuthRepository } from '@auth/types';
 import END_POINT from '@common/constants/endPoint';
 import APP_TYPES from '@common/di/types';
 import { UserEntity, UserResponse } from '@common/entities/user';
 import { SuccessResponse } from '@common/network/types/apiResponse';
 import type { IHttpClient } from '@common/network/types/HttpClient.interface';
-
 import { inject, injectable } from 'inversify';
+import IAuthRepository from './AuthRepository.interface';
 
 @injectable()
 export default class AuthRepository implements IAuthRepository {

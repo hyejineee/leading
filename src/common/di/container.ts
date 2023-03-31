@@ -1,13 +1,13 @@
 import ArticleRepository from '@article/repository/ArticleRepository';
 import { IArticleRepository } from 'src/repositories/ArticleRepository/ArticleRepository.interface';
-import FetchGlobalFeedUseCase from '@article/usecases/FetchGlobalFeedUseCase';
+import FetchGlobalFeedUseCase from 'src/useCases/FetchGlobalFeedUseCase';
 import RegisterUserUseCase from '@auth/usecases/RegisterUserUseCase/RegisterUserUseCase';
 import { ILocalRepository } from '@common/types/interfaces';
 import LocalRepository from '@common/utils/LocalRepository';
 import { Container } from 'inversify';
 import AuthRepository from '../../auth/repositories/AuthRepository';
 import { IAuthRepository } from '../../auth/types';
-import LoginUseCase from '../../auth/usecases/LoginUseCase/LoginUseCase';
+import LoginUseCase from '../../useCases/LoginUseCase/LoginUseCase';
 import AxiosHttpClient from '../network/AxiosHttpClient';
 import { IHttpClient } from '../network/types/HttpClient.interface';
 import APP_TYPES from './types';

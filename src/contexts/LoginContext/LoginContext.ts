@@ -1,6 +1,5 @@
 import constate from 'constate';
-import { UseLogin } from '@auth/types/hooks.types';
-import LoginUseCase from '@auth/usecases/LoginUseCase/LoginUseCase';
+import LoginUseCase from 'src/useCases/LoginUseCase/LoginUseCase';
 import { useState } from 'react';
 import Action from '@common/types/Action';
 
@@ -16,7 +15,7 @@ type UseAuthContextProps = {
 const useLoginContext = ({ loginUseCase }: UseAuthContextProps) => {
   const [uiState, setUiState] = useState<Action<LoginPageState, null>>();
 
-  const login: UseLogin = async (email: string, password: string) => {
+  const login = async (email: string, password: string) => {
     try {
       await loginUseCase.execute(email, password);
 

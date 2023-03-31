@@ -1,9 +1,7 @@
-import { IRegisterUserContext } from '@auth/types';
-import { UseRegisterUser } from '@auth/types/hooks.types';
-import RegisterUserUseCase from '@auth/usecases/RegisterUserUseCase/RegisterUserUseCase';
 import Action from '@common/types/Action';
 import constate from 'constate';
 import { ReactNode, useState } from 'react';
+import RegisterUserUseCase from 'src/useCases/RegisterUserUseCase/RegisterUserUseCase';
 import RegisterUserPageState from './pageState';
 
 type Props = {
@@ -11,15 +9,13 @@ type Props = {
   registerUserUseCase: RegisterUserUseCase;
 };
 
-type Context = (props: Props) => IRegisterUserContext;
-
-const useRegisterUserContext: Context = ({ registerUserUseCase }: Props) => {
+const useRegisterUserContext = ({ registerUserUseCase }: Props) => {
   const [uiState, setUiState] = useState<Action<
     RegisterUserPageState,
     null
   > | null>(null);
 
-  const registerUser: UseRegisterUser = async (
+  const registerUser = async (
     email: string,
     password: string,
     username: string,

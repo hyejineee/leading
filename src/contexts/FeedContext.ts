@@ -1,4 +1,4 @@
-import FetchGlobalFeedUseCase from '@article/usecases/FetchGlobalFeedUseCase';
+import FetchGlobalFeedUseCase from 'src/useCases/FetchGlobalFeedUseCase';
 import constate from 'constate';
 
 type Props = {

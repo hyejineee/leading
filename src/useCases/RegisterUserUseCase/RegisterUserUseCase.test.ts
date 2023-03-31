@@ -1,7 +1,7 @@
 import 'reflect-metadata';
-import { IAuthRepository } from '@auth/types';
 import { UserEntity } from '@common/entities/user';
 import { anything, instance, mock, when, verify } from 'ts-mockito';
+import IAuthRepository from 'src/repositories/AuthReoository/AuthRepository.interface';
 import RegisterUserUseCase from './RegisterUserUseCase';
 
 describe('RegisterUserUseCase', () => {

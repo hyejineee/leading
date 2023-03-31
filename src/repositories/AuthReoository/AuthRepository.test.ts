@@ -1,4 +1,3 @@
-import { IAuthRepository } from '@auth/types';
 import { UserEntity } from '@common/entities/user';
 import {
   FailResponse,
@@ -11,7 +10,7 @@ import AuthRepository from './AuthRepository';
 
 describe('AuthRepository', () => {
   const mockHttpClient = mock<IHttpClient>();
-  let authRepository: IAuthRepository;
+  let authRepository: AuthRepository;
 
   const fakeUserEntity: UserEntity = {
     email: 'test@test.com',
@@ -109,7 +108,4 @@ describe('AuthRepository', () => {
       });
     });
   });
-
-
-
 });

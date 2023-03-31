@@ -1,8 +1,8 @@
 // 회원가입 페이지에서 사용되는 상태를 관리하는 context
 
-import RegisterUserUseCase from '@auth/usecases/RegisterUserUseCase/RegisterUserUseCase';
 import { act, render, renderHook } from '@testing-library/react';
 import { ReactNode } from 'react';
+import RegisterUserUseCase from 'src/useCases/RegisterUserUseCase/RegisterUserUseCase';
 import { anything, instance, mock, when } from 'ts-mockito';
 import RegisterUserPageState from './pageState';
 import {

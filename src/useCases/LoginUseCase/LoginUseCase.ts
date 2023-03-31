@@ -1,7 +1,7 @@
 import { inject, injectable } from 'inversify';
 import APP_TYPES from '@common/di/types';
 import type { ILocalRepository } from '@common/types/interfaces';
-import type { IAuthRepository } from '@auth/types';
+import IAuthRepository from 'src/repositories/AuthReoository/AuthRepository.interface';
 
 @injectable()
 export default class LoginUseCase {

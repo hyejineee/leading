@@ -1,6 +1,6 @@
 import GlobalFeed from 'src/components/views/Article/GlobalFeed';
 
-import FetchGlobalFeedUseCase from '@article/usecases/FetchGlobalFeedUseCase';
+import FetchGlobalFeedUseCase from 'src/useCases/FetchGlobalFeedUseCase';
 import appContainer from '@common/di/container';
 import APP_TYPES from '@common/di/types';
 import { FeedProvider } from 'src/contexts/FeedContext';
