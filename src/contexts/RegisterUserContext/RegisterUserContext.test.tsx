@@ -9,7 +9,7 @@ import {
   RegisterUserProvider,
   useRegisterUser,
   useRegisterUserPageState,
-} from './registerUserContext';
+} from './RegisterUserContext';
 
 describe('RegisterUserContext', () => {
   const mockRegisterUserUseCase = mock<RegisterUserUseCase>();

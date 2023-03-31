@@ -1,8 +1,8 @@
-import { RegisterUserProvider } from '@auth/contexts/registerUserContext/registerUserContext';
 import RegisterUserUseCase from '@auth/usecases/RegisterUserUseCase/RegisterUserUseCase';
 import appContainer from '@common/di/container';
 import APP_TYPES from '@common/di/types';
 import RegisterUserContainer from 'src/components/views/Auth/RegisterUserContainer/RegisterUserContainer';
+import { RegisterUserProvider } from 'src/contexts/RegisterUserContext/RegisterUserContext';
 
 export default function RegisterUserPage() {
   const registerUserUseCase = appContainer.get<RegisterUserUseCase>(

@@ -1,7 +1,7 @@
 import {
   LoginPageState,
   useLoginPageState,
-} from '@auth/contexts/loginContext/loginContext';
+} from 'src/contexts/LoginContext/LoginContext';
 import { useSetAlert } from 'src/components/commons/AlertMessage';
 import { useRouter } from 'next/router';
 import { ReactNode, useEffect } from 'react';

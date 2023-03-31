@@ -3,7 +3,7 @@ import {
   LoginPageState,
   LoginProvider,
   useLoginPageState,
-} from '@auth/contexts/loginContext/loginContext';
+} from 'src/contexts/LoginContext/LoginContext';
 import LoginUseCase from '@auth/usecases/LoginUseCase/LoginUseCase';
 import AlertMessage, {
   AlertProvider,

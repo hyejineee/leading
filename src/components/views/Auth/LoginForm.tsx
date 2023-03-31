@@ -1,4 +1,4 @@
-import { useLogin } from '@auth/contexts/loginContext/loginContext';
+import { useLogin } from 'src/contexts/LoginContext/LoginContext';
 
 import Input from 'src/components/commons/Input';
 import { LOGIN_SCHEME } from '@common/constants/yupScheme';
