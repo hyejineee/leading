@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import useClientLayoutEffect from '../../hooks/useClientLayoutEffect';
+import useClientLayoutEffect from '../../../hooks/useClientLayoutEffect';
 import { ModeType, UseTheme } from '../types/useTheme.types';
 
 const useTheme : ()=>UseTheme = ()=>{
