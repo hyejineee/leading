@@ -25,12 +25,13 @@
     "emitDecoratorMetadata": true,
     "baseUrl": "./",
     "paths": {
-      "@auth/*": ["src/auth/*"],
-      "@article/*": ["src/article/*"],
-      "@comment/*": ["src/comment/*"],
-      "@profile/*": ["src/profile/*"],
-      "@tag/*": ["src/tag/*"],
-      "@common/*": ["src/common/*"]
+      "@repositories/*": ["src/repositories/*"],
+      "@components/*": ["src/components/*"],
+      "@contexts/*": ["src/contexts/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@utils/*": ["src/utils/*"],
+      "@common/*": ["src/common/*"],
+      "@useCases/*": ["src/useCases/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "*.js"],

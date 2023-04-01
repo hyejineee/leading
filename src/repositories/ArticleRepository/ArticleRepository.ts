@@ -1,6 +1,6 @@
 import END_POINT from '@common/constants/endPoint';
 import APP_TYPES from '@common/di/types';
-import { ArticleEntity, ArticleResponse } from '@common/entities/article';
+import { ArticleResponse } from '@common/entities/article';
 import { SuccessResponse } from '@common/network/types/apiResponse';
 import type { IHttpClient } from '@common/network/types/HttpClient.interface';
 import { inject, injectable } from 'inversify';

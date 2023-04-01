@@ -11,12 +11,13 @@ const nextConfig = {
     const copy = { ...config };
     copy.resolve = {
       alias: {
-        '@auth': path.resolve(__dirname, 'src/auth'),
-        '@article': path.resolve(__dirname, 'src/article'),
-        '@comment': path.resolve(__dirname, 'src/comment'),
-        '@profile': path.resolve(__dirname, 'src/profile'),
-        '@tag': path.resolve(__dirname, 'src/tag'),
+        '@repositories': path.resolve(__dirname, 'src/repositories'),
+        '@components': path.resolve(__dirname, 'src/components'),
+        '@contexts': path.resolve(__dirname, 'src/contexts'),
+        '@hooks': path.resolve(__dirname, 'src/hooks'),
+        '@utils': path.resolve(__dirname, 'src/utils'),
         '@common': path.resolve(__dirname, 'src/common'),
+        '@useCases': path.resolve(__dirname, 'src/useCases'),
       },
       ...copy.resolve,
     };
