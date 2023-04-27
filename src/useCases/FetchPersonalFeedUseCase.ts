@@ -14,6 +14,6 @@ export default class FetchPersonalFeedUseCase {
   }
 
   async execute() {
-    return (await this.articleRepository.fetchGlobalFeed()).data;
+    return (await this.articleRepository.fetchPersonalFeed()).data;
   }
 }

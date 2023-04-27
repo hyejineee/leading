@@ -12,6 +12,7 @@ const USE_CASE_TYPES = {
   LoginUseCase: Symbol.for('LoginUseCase'),
   RegisterUserUseCase: Symbol.for('RegisterUserUseCase'),
   FetchGlobalFeedUseCase: Symbol.for('FetchGlobalFeedUseCase'),
+  FetchPersonalFeedUseCase: Symbol.for('FetchPersonalFeedUseCase'),
 };
 
 const APP_TYPES = {

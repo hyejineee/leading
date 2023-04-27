@@ -7,6 +7,7 @@ import ArticleRepository from 'src/repositories/ArticleRepository/ArticleReposit
 import AuthRepository from 'src/repositories/AuthReoository/AuthRepository';
 import RegisterUserUseCase from 'src/useCases/RegisterUserUseCase/RegisterUserUseCase';
 import ILocalRepository from 'src/repositories/LocalRepository/LocalRepository.interface';
+import FetchPersonalFeedUseCase from '@useCases/FetchPersonalFeedUseCase';
 import LoginUseCase from '../../useCases/LoginUseCase/LoginUseCase';
 import AxiosHttpClient from '../network/AxiosHttpClient';
 import { IHttpClient } from '../network/types/HttpClient.interface';
@@ -43,5 +44,9 @@ appContainer
 appContainer
   .bind(APP_TYPES.USE_CASE_TYPES.FetchGlobalFeedUseCase)
   .to(FetchGlobalFeedUseCase);
+
+appContainer
+  .bind(APP_TYPES.USE_CASE_TYPES.FetchPersonalFeedUseCase)
+  .to(FetchPersonalFeedUseCase);
 
 export default appContainer;
