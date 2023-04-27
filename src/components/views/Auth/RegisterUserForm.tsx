@@ -1,8 +1,8 @@
-import { useRegisterUser } from '@auth/contexts/registerUserContext/registerUserContext';
-import Form from '@common/components/From';
 import Input from 'src/components/commons/Input';
 import { REGISTER_USER_SCHEMA } from '@common/constants/yupScheme';
 import { FieldValues, UseFormReturn } from 'react-hook-form';
+import Form from '@components/commons/From';
+import { useRegisterUser } from '@contexts/RegisterUserContext/RegisterUserContext';
 
 export default function RegisterUserForm() {
   const registerUser = useRegisterUser();

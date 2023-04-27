@@ -1,10 +1,10 @@
-import RegisterUserForm from '@auth/components/RegisterUserForm';
-import RegisterUserPageState from '@auth/contexts/registerUserContext/pageState';
-import { useRegisterUserPageState } from '@auth/contexts/registerUserContext/registerUserContext';
 import { useSetAlert } from 'src/components/commons/AlertMessage';
 import ROUTER from '@common/constants/router';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { useRegisterUserPageState } from '@contexts/RegisterUserContext/RegisterUserContext';
+import RegisterUserPageState from '@contexts/RegisterUserContext/pageState';
+import RegisterUserForm from '../RegisterUserForm';
 
 export default function RegisterUserContainer() {
   const router = useRouter();

@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import APP_TYPES from '@common/di/types';
-import { ILocalRepository } from '@common/types/interfaces';
 import axios, {
   AxiosError,
   AxiosInstance,
@@ -8,6 +7,7 @@ import axios, {
   InternalAxiosRequestConfig,
 } from 'axios';
 import { inject, injectable } from 'inversify';
+import ILocalRepository from '@repositories/LocalRepository/LocalRepository.interface';
 import { FailResponse, SuccessResponse } from './types/apiResponse';
 import { IHttpClient } from './types/HttpClient.interface';
 

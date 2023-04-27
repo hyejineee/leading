@@ -1,4 +1,4 @@
-import { ILocalRepository } from '@common/types/interfaces';
+import ILocalRepository from './LocalRepository.interface';
 
 export default class LocalRepository implements ILocalRepository {
   set<T>(key: string, value: T): void {
